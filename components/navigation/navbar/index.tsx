@@ -2,6 +2,7 @@ import React from 'react'
 import Link from "next/link";
 import Image from "next/image";
 import Theme from "@/components/navigation/navbar/Theme";
+import {MobileNavigation} from "@/components/navigation/navbar/MobileNavigation";
 
 const Navbar = () => {
     return <nav className="flex-between background-light900_dark200 fixed z-50 w-full gap-5 p-6 shadow-light-300 dark:shadow-none sm:px-12">
@@ -14,7 +15,10 @@ const Navbar = () => {
             </p>
         </Link>
         <p>Global Search</p>
-        <div className="flex-between gap-5"><Theme/></div>
+        <div className="flex-between gap-5">
+            <Theme/>
+        <MobileNavigation/>
+        </div>
     </nav>;
 }
 export default Navbar
