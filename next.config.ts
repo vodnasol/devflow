@@ -2,20 +2,11 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
     serverExternalPackages: ["pino", "pino-pretty"],
-
-    typescript: {
-        ignoreBuildErrors: true,
-    },
     images: {
         remotePatterns: [
             {
                 protocol: "https",
-                hostname: "images.unsplash.com",
-                port: "",
-            },
-            {
-                protocol: "https",
-                hostname: "avatars.githubusercontent.com",
+                hostname: "static.vecteezy.com",
                 port: "",
             },
             {
@@ -25,7 +16,7 @@ const nextConfig: NextConfig = {
             },
             {
                 protocol: "https",
-                hostname: "*",
+                hostname: "avatars.githubusercontent.com",
                 port: "",
             },
         ],

@@ -5,7 +5,17 @@ module.exports = {
             {
                 protocol: "https",
                 hostname: "static.vecteezy.com",
-                pathname: "/system/resources/**",
+                port: "",
+            },
+            {
+                protocol: "https",
+                hostname: "lh3.googleusercontent.com",
+                port: "",
+            },
+            {
+                protocol: "https",
+                hostname: "avatars.githubusercontent.com",
+                port: "",
             },
         ],
     },
