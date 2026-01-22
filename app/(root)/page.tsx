@@ -6,6 +6,16 @@ import ROUTES from "@/constants/routes";
 import HomeFilter from "@/components/filters/HomeFilter";
 import QuestionCard from "@/components/cards/QuestionCard";
 
+import handleError from "@/lib/handlers/error";
+import { ValidationError } from "@/lib/http-errors";
+import dbConnect from "@/lib/mongoose";
+import {api} from "@/lib/api";
+import {auth} from "@/auth";
+
+
+
+
+
 const questions = [
     {
         _id: "1",
@@ -51,6 +61,10 @@ interface SearchParams {
 }
 
 const Home = async ({ searchParams }: SearchParams) => {
+    const session = await auth();
+
+    console.log("Session:",session);
+
     const { query = "" } = await searchParams;
 
     const filteredQuestions = questions.filter((question) =>
@@ -75,6 +89,7 @@ const Home = async ({ searchParams }: SearchParams) => {
                     imgSrc="/icons/search.svg"
                     placeholder="Search questions..."
                     otherClasses="flex-1"
+                    iconPosition="left"
                 />
             </section>
             <HomeFilter />
